@@ -1,0 +1,27 @@
+* UKY Login
+
+This script allows command-line login to the University of Kentucky secure wifi
+(which, for those not in the know, has a login page after connecting).
+
+* Setting Up
+
+  If you do not have a GPG key, please make one first. Login credentials should
+  /never/ be stored in plain text!
+
+  Once you have a GPG key, edit =~/.authinfo.gpg= and add a line like the
+  following:
+
+  #+begin_example
+  machine wireless.net.uky.edu login <link blue account name> port 80 password "<your password>"
+  #+end_example
+
+  Save it (making sure that it does indeed get encrypted!). Install this
+  package by cloning the repository and running ~npm install -g~ inside it.
+
+  Now: =uky-login= will log you into the secure wifi!
+
+* How it Works
+
+  It reads the username/password for =wireless.net.uky.edu:80= from your
+  GPG-encrypted =~/authinfo.gpg= file. This information is passed to a
+  PhantomJS instance, which logs in with it.
