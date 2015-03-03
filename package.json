@@ -12,6 +12,7 @@
   "author": "J David Smith",
   "license": "GPL",
   "dependencies": {
+    "mocha": "^2.1.0",
     "phantomjs": "^1.9.13"
   }
 }
